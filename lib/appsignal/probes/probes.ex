@@ -54,7 +54,8 @@ defmodule Appsignal.Probes do
             probe.()
           rescue
             e ->
-              Logger.error("Error while calling probe #{name}: #{e}")
+              # problem here
+              Logger.error("Error while calling probe #{name}: #{inspect(e)}")
           end
         end)
       end)
